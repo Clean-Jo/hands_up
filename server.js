@@ -103,10 +103,8 @@ app.get('/student', (req, res) => {
     res.sendFile(__dirname + '/student.html');
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+
+const socket = io('wss://your-server-domain:port', {
+  transports: ['websocket']
 });
-
-
 
