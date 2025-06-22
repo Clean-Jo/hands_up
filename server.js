@@ -104,7 +104,8 @@ app.get('/student', (req, res) => {
 });
 
 
-const socket = io('wss://your-server-domain:port', {
-  transports: ['websocket']
+const socket = io('wss://handsup.netlify.app:8080', {
+    transports: ['websocket'],
+    upgrade: false
 });
 

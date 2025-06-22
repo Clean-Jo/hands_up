@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeyo</title>
+    
     <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
 
     <style>
         body {
             background-color: #f0f8ff; /* 배경색 설정 (연한 파랑색) */
-            background-image: url('http://goodmokja77.mycafe24.com:8080/images/jgs.jpg'); /* 여기에 원하는 이미지 URL을 넣으세요 */
+            background-image: url('https://handsups.netlify.app:8080/images/jgs.jpg'); /* 여기에 원하는 이미지 URL을 넣으세요 */
             background-size: cover; /* 전체 화면을 덮도록 설정 */
             background-position: center; /* 배경 이미지 중앙 정렬 */
             font-family: Arial, sans-serif; /* 폰트 설정 */
@@ -126,10 +127,10 @@
     <ul id="queue" style="cursor: pointer;"></ul>
 
     <script>
-        document.addEventListener('DOMContentLoaded', async function() {
-            const socket = io('http://goodmokja77.mycafe24.com:8080', {
-                transports: ['websocket'],
-                upgrade: false
+         document.addEventListener('DOMContentLoaded', () => {
+            const socket = io('wss://handsup.netlify.app:8080', {
+            transports: ['websocket'],
+            upgrade: false
             });
             let currentQueue = []; // 현재 대기열 저장
             let isTeacherMode = false; // 선생님 모드 상태 변수 추가
